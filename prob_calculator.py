@@ -4,14 +4,10 @@ import random
 
 class Hat:
     def __init__(self, **args):
-        self.red = args.get('red')
-        self.blue = args.get('blue')
         self.contents = []
-        for r in range(self.red):
-            self.contents.append("red")
-        for b in range(self.blue):
-            self.contents.append("blue")
-
+        for arg in args:
+            for count in range(args[arg]):
+                self.contents.append(arg)
     def draw(self, numNeed):
         listOut = []
         for cnt in range(numNeed):
@@ -20,5 +16,5 @@ class Hat:
             self.contents.remove(randItem)
         return listOut
 
-
-#def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    pass
